@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invest Now!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="hero">
+        <h1>Invest Now!</h1>
+        <p>Access live stock trading markets, real-time data, and instant execution platforms.</p>
+        <video src=""></video>
+        <a href="products.html" class="btn-join">← Back to Products</a>
+       
+    </section>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestUS - Forex & Gold Portal</title>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --card-dark: #1e293b;
+            --accent-gold: #e2e8f0;
+            --gold-glow: #eab308;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --bullish: #22c55e;
+            --bearish: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            padding: 2rem 1rem;
+            display: flex;
+            justify-center: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            letter-spacing: -0.05em;
+        }
+
+        header h1 span {
+            color: var(--gold-glow);
+        }
+
+        header p {
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background-color: var(--card-dark);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid #334155;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Asset Table Styles */
+        .ticker-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .ticker-table th {
+            text-align: left;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid #334155;
+        }
+
+        .ticker-table td {
+            padding: 1rem 0;
+            border-bottom: 1px solid #334155;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .asset-name {
+            font-weight: 600;
+        }
+
+        .asset-meta {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            display: block;
+        }
+
+        .price-up {
+            color: var(--bullish);
+            transition: color 0.3s ease;
+        }
+
+        .price-down {
+            color: var(--bearish);
+            transition: color 0.3s ease;
+        }
+
+        /* Call to Action Pane */
+        .cta-pane {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .input-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .input-group select, .input-group input {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--bg-dark);
+            border: 1px solid #334155;
+            color: white;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .input-group select:focus, .input-group input:focus {
+            border-color: var(--gold-glow);
+        }
+
+        .invest-btn {
+            background-color: var(--gold-glow);
+            color: #000;
+            border: none;
+            width: 100%;
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+            margin-top: 1rem;
+        }
+
+        .invest-btn:hover {
+            opacity: 0.9;
+        }
+
+        .badge {
+            background: #1e293b;
+            border: 1px solid var(--gold-glow);
+            color: var(--gold-glow);
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Invest<span>US</span></h1>
+        <p>Real-Time Institutional Forex & Commodities Aggregator</p>
+    </header>
+
+    <div class="dashboard-grid">
+        <!-- Live Listings Panel -->
+        <div class="card">
+            <div class="card-title">
+                Live Market Feeds <span class="badge">Live Ticks</span>
+            </div>
+            <table class="ticker-table">
+                <thead>
+                    <tr>
+                        <th>Asset Pair</th>
+                        <th>Live Price</th>
+                        <th>24h Change</th>
+                    </tr>
+                </thead>
+                <tbody id="market-ticker-body">
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Invest Action Panel -->
+        <div class="card cta-pane">
+            <div>
+                <div class="card-title">Quick Invest</div>
+                
+                <div class="input-group">
+                    <label for="asset-select">Select Asset</label>
+                    <select id="asset-select">
+                        <option value="XAUUSD">XAU/USD (Gold Spot)</option>
+                        <option value="EURUSD">EUR/USD</option>
+                        <option value="GBPUSD">GBP/USD</option>
+                        <option value="USDJPY">USD/JPY</option>
+                        <option value="AUDUSD">AUD/USD</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="amount-input">Investment Amount (USD)</label>
+                    <input type="number" id="amount-input" value="1000" min="10">
+                </div>
+            </div>
+
+            <button class="invest-btn" onclick="executeInvestment()">Invest Now</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    //  prices matching 2026 real-world data positions
+    const marketData = {
+        XAUUSD: { name: "XAU / USD", meta: "Gold Spot / US Dollar", price: 4536.88, change: 0.93 },
+        EURUSD: { name: "EUR / USD", meta: "Euro / US Dollar", price: 1.0845, change: -0.12 },
+        GBPUSD: { name: "GBP / USD", meta: "British Pound / US Dollar", price: 1.2672, change: 0.24 },
+        USDJPY: { name: "USD / JPY", meta: "US Dollar / Japanese Yen", price: 154.32, change: -0.05 },
+        AUDUSD: { name: "AUD / USD", meta: "Australian Dollar / US Dollar", price: 0.6618, change: 0.41 }
+    };
+
+    function renderTable() {
+        const tbody = document.getElementById('market-ticker-body');
+        tbody.innerHTML = '';
+
+        for (const [key, asset] of Object.entries(marketData)) {
+            const isUp = asset.change >= 0;
+            const priceDecimals = key === 'XAUUSD' || key === 'USDJPY' ? 2 : 4;
+            
+            const row = document.createElement('tr');
+            row.id = `row-${key}`;
+            row.innerHTML = `
+                <td>
+                    <span class="asset-name">${asset.name}</span>
+                    <span class="asset-meta">${asset.meta}</span>
+                </td>
+                <td id="price-${key}" class="price-cell">${asset.price.toFixed(priceDecimals)}</td>
+                <td class="${isUp ? 'price-up' : 'price-down'}">${isUp ? '+' : ''}${asset.change.toFixed(2)}%</td>
+            `;
+            tbody.appendChild(row);
+        }
+    }
+
+    
+    function simulateLiveTicks() {
+        setInterval(() => {
+            for (const [key, asset] of Object.entries(marketData)) {
+                // Micro adjustments simulating real orderbook movements
+                const variancePct = (Math.random() - 0.5) * 0.04; 
+                const priceElement = document.getElementById(`price-${key}`);
+                
+                const oldPrice = asset.price;
+                asset.price += asset.price * (variancePct / 100);
+                
+                if (priceElement) {
+                    const priceDecimals = key === 'XAUUSD' || key === 'USDJPY' ? 2 : 4;
+                    priceElement.innerText = asset.price.toFixed(priceDecimals);
+                    
+                    
+                    if (asset.price > oldPrice) {
+                        priceElement.className = 'price-up';
+                    } else {
+                        priceElement.className = 'price-down';
+                    }
+                }
+            }
+        }, 1500);
+    }
+
+    function executeInvestment() {
+        const asset = document.getElementById('asset-select').value;
+        const amount = document.getElementById('amount-input').value;
+        alert(`Request Sent!\nProcessing investment of $${amount} into ${asset}.`);
+    }
+
+    // Initial load execution
+    renderTable();
+    simulateLiveTicks();
+</script>
+
+</body>
+</html>

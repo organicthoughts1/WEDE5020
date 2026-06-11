@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Inspection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="hero">
+        <h1>Portfolio Inspection</h1>
+        <p>Analyze your trading risk, diversification, and overall market performance tools.</p>
+        <a href="products.html" class="btn-join">← Back to Products</a>
+    </section>
+</body>
+</html><section class="inspection-portal-section">
+    <div class="portal-container">
+        
+        <div class="portal-header">
+            <span class="security-badge">&#128274; AES-256 Encrypted Session</span>
+            <h2 class="portal-title">Portfolio Inspection Gateway</h2>
+            <p class="portal-subtitle">Access real-time asset validation, risk profiling, and equity allocation audits.</p>
+        </div>
+
+        <div class="portal-grid">
+            <div class="portal-card login-card">
+                <h3 class="card-heading">Account Authorization</h3>
+                <p class="card-subtext">Please supply your institutional access codes to fetch active asset ledger balances.</p>
+                
+                <form class="secure-form" onsubmit="event.preventDefault(); alert('Security handshake initiated. Checking ledger keys...');">
+                    <div class="form-group">
+                        <label for="inspection-id">Institutional Account ID or Email</label>
+                        <input type="text" id="inspection-id" placeholder="e.g., NN-84920-X" required autocomplete="username">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inspection-pass">Secure Access Password / Token</label>
+                        <input type="password" id="inspection-pass" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required autocomplete="current-password">
+                    </div>
+
+                    <div class="form-checkbox-group">
+                        <input type="checkbox" id="mfa-bypass">
+                        <label for="mfa-bypass">Remember this secure terminal device for 30 days</label>
+                    </div>
+
+                    <button type="submit" class="portal-submit-btn">Authorize Audit &rarr;</button>
+                </form>
+            </div>
+
+            <div class="portal-card privacy-card">
+                <h3 class="card-heading">Data Privacy & Zero-Knowledge Isolation</h3>
+                <p class="card-subtext">At NovaNet Invest, personal metadata security isn't secondary—it's mathematically enforced.</p>
+                
+                <div class="privacy-bullet-stack">
+                    <div class="privacy-item">
+                        <span class="icon">&#128065;&#65039;</span>
+                        <p><strong>Zero External Sharing:</strong> Your personal identity vectors, tax documentation filings, and banking settlement links are never traded, leased, or queried by external marketing algorithms.</p>
+                    </div>
+                    
+                    <div class="privacy-item">
+                        <span class="icon">&#128293;</span>
+                        <p><strong>Local Session Volatility:</strong> Portfolio valuation inspections run via an isolated sandbox engine instance. Closing this active browser tab immediately clears all locally cached asset ledgers.</p>
+                    </div>
+
+                    <div class="privacy-item">
+                        <span class="icon">&#128272;</span>
+                        <p><strong>Anonymized Account Shielding:</strong> Audit data streams pull strictly from transaction hashes. Personal identifiable information (PII) is fully decoupled from asset balance listings inside database clusters.</p>
+                    </div>
+                </div>
+
+                <div class="privacy-footer-note">
+                    Need to update your data governance preferences or request full encryption-key erasure? 
+                    <a href="#privacy-policy" class="privacy-inline-link">Review Privacy Protocols</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

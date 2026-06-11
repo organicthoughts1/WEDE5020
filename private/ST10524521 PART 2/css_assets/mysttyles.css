@@ -1,0 +1,557 @@
+/* ==========================================================================
+   1. RESET & BASE GREY THEME
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  color: #2b2b2b;       /* Dark charcoal for text */
+  background-color: #f4f4f4; /* Soft light grey background */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================================================
+   2. NAVIGATION BAR
+   ========================================================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #1a1a1a;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+/* INTERACTIVE: Nav link sliding underline effect */
+.nav-links a {
+  position: relative;
+  font-weight: 500;
+  color: #666;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #333;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-links a:hover {
+  color: #000;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* ==========================================================================
+   3. INDEX HERO SECTION (Minimalist Grey Header)
+   ========================================================================== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 60vh;
+  background: linear-gradient(135deg, #e0e0e0 0%, #b8b8b8 100%);
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+}
+
+/* INTERACTIVE: Pulsing Button */
+.cta-btn {
+  margin-top: 25px;
+  padding: 12px 35px;
+  background-color: #2b2b2b;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #444444;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+/* ==========================================================================
+   4. PRODUCT PAGE GRID (Instagram, YouTube, News)
+   ========================================================================== */
+.product-container {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.product-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* INTERACTIVE: Card Lift & 3D Shadow Shift */
+.product-card {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 40px 25px;
+  text-align: center;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.product-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.product-card p {
+  color: #777;
+  font-size: 14px;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: #999;
+}
+
+/* Custom internal accent borders inside cards on hover */
+.product-card::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #666;
+  transition: width 0.3s ease;
+  margin: 0 auto 15px auto;
+}
+
+.product-card:hover::before {
+  width: 40px;
+}
+/* --- GREY THEME INTEGRATION & INTERACTIVE STYLES --- */
+
+/* Base settings to ensure smooth animations */
+.product-grid, .nav-links a, .product-card {
+  transition: all 0.3s ease;
+}
+
+/* INTERACTIVE: Nav link sliding underline effect */
+.nav-links a {
+  position: relative;
+  color: #666 !important; /* Forces a sleek medium grey */
+  padding: 5px 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #333; /* Dark grey line */
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-links a:hover {
+  color: #000 !important;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Product Section Layout */
+.product-container {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* INTERACTIVE: 3D Lift & Shadow Card Animation */
+.product-card {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 40px 25px;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: #2b2b2b;
+}
+
+.product-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.product-card p {
+  color: #777;
+  font-size: 14px;
+}
+
+/* The magic hover effect */
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Soft grey shadow */
+  border-color: #999;
+}
+
+/* INTERACTIVE: Expanding top accent line on hover */
+.product-card::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #666;
+  transition: width 0.3s ease;
+  margin: 0 auto 15px auto;
+}
+
+.product-card:hover::before {
+  width: 40px;
+}
+/* --- GREY THEME PRODUCT BUTTONS --- */
+
+/* Container to center and space out the 5 buttons smoothly */
+.product-button-container {
+  display: flex;
+  flex-wrap: wrap;       /* Keeps things looking perfect on mobile */
+  justify-content: center;
+  gap: 15px;             /* Space between the buttons */
+  margin: 40px auto;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+/* Base style for the interactive grey buttons */
+.grey-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: #e0e0e0;     /* Light grey base */
+  color: #2c2c2c;                /* Dark charcoal text for readability */
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  border: 1px solid #d0d0d0;
+  border-radius: 30px;           /* Gives a clean pill shape */
+  text-align: center;
+  min-width: 180px;              /* Ensures buttons are beautifully uniform */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* INTERACTIVE: Hover state causes a deep fill and button lift */
+.grey-btn:hover {
+  background-color: #2c2c2c;     /* Flips to deep slate grey */
+  color: #ffffff;                /* text turns crisp white */
+  border-color: #2c2c2c;
+  transform: translateY(-3px);   /* Lifts the button slightly */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Soft premium shadow */
+}
+
+/* INTERACTIVE: Active state when clicked */
+.grey-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* --- SEARCH DROPDOWN INTERACTIVE STYLES --- */
+
+/* The main container wrapper */
+.search-dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Base style for your search button */
+.search-btn {
+  background-color: #2c2c2c; /* Dark charcoal grey */
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border: 1px solid #2c2c2c;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Change button background slightly on hover */
+.search-dropdown-container:hover .search-btn {
+  background-color: #444444;
+}
+
+/* The hidden menu box containing your 5 pages */
+.dropdown-content {
+  position: absolute;
+  top: 100%;             /* Positions it directly under the button */
+  left: 0;
+  min-width: 240px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15); 
+  padding: 10px 0;
+  z-index: 999;          
+  
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Optional header text inside the menu box */
+.dropdown-header {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #999999;
+  padding: 8px 20px;
+  font-weight: 700;
+}
+
+/* Styling the 5 subpage links inside the menu */
+.dropdown-content a {
+  display: block;
+  color: #333333;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+/* INTERACTIVE: Highlight link with light grey background on hover */
+.dropdown-content a:hover {
+  background-color: #f4f4f4; /* Subtle light grey highlight */
+  color: #000000;
+  padding-left: 25px;       /* Sleek shift-to-the-right animation */
+}
+
+/* THE TRIGGER: When cursor hovers over container, reveal the menu */
+.search-dropdown-container:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Slides up perfectly into place */
+}
+
+/* Apply the dark background to the page body */
+body {
+    background-color: #1e222b; /* Sleek dark charcoal gray */
+    color: #ffffff;            /* Light text for high contrast */
+    margin: 0;
+}
+
+/* Update your container cards with navy blue borders */
+.wm-container, .lh-container {
+    background-color: #2a2f3b; /* Distinct dark gray for container depth */
+    border: 3px solid #0f2c59; /* Crisp, solid navy blue outer border line */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Enhanced shadow depth for dark mode */
+}
+
+/* Update inner text colors so they stand out clearly against the dark background */
+.wm-text, .lh-description, .lh-book-desc, .lh-library-meta {
+    color: #cbd5e1; /* Soft light gray text to reduce eye strain */
+}
+
+/* Turn the horizontal divider in the learning hub into a matching navy blue line */
+.lh-divider {
+    background-color: #0f2c59; /* Matches the navy blue border theme */
+    height: 2px;               /* Slightly thicker to match the border feel */
+    border: none;
+}
+
+/* Ensure the mini book cards also look sharp in dark mode */
+.lh-book-card {
+    background-color: #212530; /* Darker pocket color for the books */
+    border: 1px solid #0f2c59; /* Subtle navy blue border line around individual books */
+}
+/* Style all buttons universally (The Primary Action Buttons) */
+.wm-btn, .lh-book-link {
+    display: inline-block;
+    background-color: #e2e8f0; /* Crisp light gray background */
+    color: #0f2c59;            /* Premium navy blue text color for readability */
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 700;          /* Bold text to make the action clear */
+    text-align: center;
+    transition: all 0.3s ease; /* Smooth transition when hovering */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect: Transforms seamlessly into your navy blue theme */
+.wm-btn:hover, .lh-book-link:hover {
+    background-color: #0f2c59; /* Navy blue background on hover */
+    color: #ffffff;            /* Shifts text to white for stark contrast */
+    transform: translateY(-2px); /* Subtle lift effect */
+    box-shadow: 0 6px 12px rgba(15, 44, 89, 0.3);
+}
+
+/* Specific adjustment for the Book Link layout to turn it into a solid button */
+.lh-book-link {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+/* Target all anchor tags across the entire website */
+a {
+    display: inline-block;
+    background-color: #e2e8f0;    /* Customized light gray background */
+    color: #0f2c59;               /* Signature Navy Blue text color */
+    padding: 12px 26px;           /* Professional button padding spacing */
+    text-decoration: none;        /* Strips the default blue underline */
+    border-radius: 6px;           /* Clean, slightly rounded edges */
+    font-weight: 700;             /* Bold text to make the link look actionable */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Balanced shadow for depth */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Ultra-smooth hover movement */
+    cursor: pointer;
+}
+
+/* Customized interactive hover state for all links */
+a:hover {
+    background-color: #0f2c59;    /* Inverts background to Navy Blue */
+    color: #ffffff;               /* Shifts text color to white */
+    transform: translateY(-2px);    /* Elegant subtle vertical lift */
+    box-shadow: 0 6px 12px rgba(15, 44, 89, 0.4); /* Stronger glow shadow */
+}
+
+/* Active pressed state for natural button haptics */
+a:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+/* 1. Global Page Reset & Navy Blue Background */
+body {
+    background-color: #0f2c59; /* Your signature premium Navy Blue background */
+    color: #ffffff;            /* High-contrast white for general text */
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. Primary Content Containers */
+.wm-container, 
+.lh-container, 
+.portal-container, 
+.news-container {
+    background-color: #1e222b; /* Dark charcoal gray for the main cards */
+    border: 2px solid #e2e8f0; /* Crisp light gray border lines around containers */
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); /* Deep shadow for structural depth */
+}
+
+/* 3. Sub-Cards (Books, Forms, News Cards) */
+.lh-book-card, 
+.news-card, 
+.portal-card {
+    background-color: #2a2f3b; /* Slightly lighter dark gray for nested cards */
+    border: 1px solid #0f2c59; /* Fine navy blue borders for interior definition */
+}
+
+/* 4. Text Readability Adjustments */
+.wm-text, 
+.lh-description, 
+.lh-book-desc, 
+.lh-library-meta, 
+.news-card-excerpt, 
+.card-subtext, 
+.form-group label {
+    color: #cbd5e1; /* Clear silver-gray text to ensure optimal readability */
+}
+
+/* 5. Custom Light Gray Buttons (Applies to all <a> links and submit buttons) */
+a, 
+button[type="submit"], 
+.portal-submit-btn {
+    display: inline-block;
+    background-color: #e2e8f0;    /* Customized clean light gray button surface */
+    color: #0f2c59;               /* Navy blue text inside the button */
+    padding: 12px 26px;
+    text-decoration: none;        /* Removes default link underlines */
+    border: none;                 /* Clears default button styles */
+    border-radius: 6px;
+    font-weight: 700;             /* Bold text action */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+}
+
+/* Button Hover State - Inverts smoothly back to Navy Blue */
+a:hover, 
+button[type="submit"]:hover, 
+.portal-submit-btn:hover {
+    background-color: #0f2c59;    /* Switches to Navy Blue on hover */
+    color: #ffffff;               /* Turns text to white */
+    border: 1px solid #e2e8f0;    /* Adds a light gray trim highlight on focus */
+    transform: translateY(-2px);  /* Premium vertical lift animation */
+    box-shadow: 0 6px 15px rgba(226, 232, 240, 0.15);
+}
+
+/* 6. Form Input Fields Adjustments */
+.form-group input, 
+.input-group select, 
+.input-group input {
+    background-color: #1a1e26;
+    border: 1px solid #0f2c59;
+    color: #ffffff;
+}
